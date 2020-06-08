@@ -353,7 +353,25 @@
                 <div class="tag-title center-align">
                     <i class="fas fa-comments"></i>&nbsp;&nbsp;留言板
                 </div>
-                
+                <script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
         </div>
         <div class="card">
@@ -391,7 +409,7 @@
         display: none;
         
         font-size: 15px;
-        color: #42b983;
+        color: #DE96D3;
     }
 
     
@@ -411,12 +429,12 @@
         <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
                    server="netease"
                    type="playlist"
-                   id="503838841"
+                   id="515477458"
                    fixed='true'
                    autoplay='false'
-                   theme='#42b983'
+                   theme='#DE96D3'
                    loop='all'
-                   order='random'
+                   order='list'
                    preload='auto'
                    volume='0.7'
                    list-folded='true'
@@ -482,13 +500,13 @@
 
 
 
-
-
-
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
+    <a href="https://weibo.com/5309982946/profile?topnav=1&amp;wvr=6" class="tooltipped" target="_blank" data-tooltip="关注我的微博: https://weibo.com/5309982946/profile?topnav=1&amp;wvr=6" data-position="top" data-delay="50">
+        <i class="fab fa-weibo"></i>
     </a>
+
+
+
+
 
 </div>
     </div>
